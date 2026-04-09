@@ -4,6 +4,38 @@
     background-size: cover;
  }
 
+ body{
+    margin: 0;
+    font-style: arial,sans-serif;
+ }
+
+ .menu{
+    list-style: none;
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    display: flex;
+    justify-content: center;
+ }
+
+ .menu li{
+    margin: 0;
+ }
+
+ .menu a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    
+ }
+
+
+ .menu a{
+    background-color: #555;
+ }
+
 
 .container {
     align-content: center;
@@ -73,11 +105,38 @@
     box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }
 
-.footer {
-    text-align: center;
-    padding: 20px;
 
-    background: rgba(0,0,0,0.7);
-    color: white;
-    font-size: 0.9rem;
+/* 1. Escondemos el cuadrito del checkbox real */
+.menu-check {
+  display: none;
+}
+
+/* 2. Estilo para el label (lo que el usuario ve como botón) */
+.menu-label {
+  cursor: pointer;
+  color: #ad9638; /* Amarillo JoJo */
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px;
+}
+
+/* 3. El submenú sigue oculto por defecto */
+.submenu {
+  display: none;
+  position: absolute;
+  background: #2c3e50;
+  list-style: none;
+  padding: 10px;
+  min-width: 200px;
+  z-index: 100;
+}
+
+/* 4. LA MAGIA: Cuando el checkbox esté marcado (+), muestra el submenú (~) */
+.menu-check:checked ~ .submenu {
+  display: block;
+}
+
+/* Opcional: Cambia el color de la flecha al estar abierto */
+.menu-check:checked ~ .menu-label {
+  color: #6d1a8f; /* Morado JoJo */
 }
