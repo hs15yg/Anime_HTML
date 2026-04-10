@@ -9,32 +9,74 @@
     font-style: arial,sans-serif;
  }
 
- .menu{
-    list-style: none;
-    background-color: #333;
+ 
+.menu, .menu ul, .menu li {
+    list-style: none !important; /* Quita los puntos/cuadritos de lista */
+    list-style-type: none !important;
+    margin: 0;
     padding: 0;
-    margin: 0;
-    display: flex;
-    display: flex;
-    justify-content: center;
- }
+    text-decoration: none;
+}
 
- .menu li{
-    margin: 0;
- }
+/* 2. MENÚ PRINCIPAL (Horizontal) */
+.menu {
+    background-color: #333;
+    display: flex; /* Alinea los items uno al lado del otro */
+    justify-content: center;/*sirve para centrar el menu*/
+}
 
- .menu a{
+.menu li {
+    position: relative; /* Base para que los submenús se peguen aquí */
+}
+
+.menu a {
     display: block;
     padding: 15px 20px;
     color: white;
     text-decoration: none;
+    background-color: #333;
+    border: none; /* Asegura que no haya bordes tipo "cuadrito" */
     
- }
+}
 
-
- .menu a{
+.menu a:hover {
     background-color: #555;
- }
+}
+
+
+.submenu, .submenu-nivel2 {
+    display: none; 
+    position: absolute;
+    background-color: #33af25;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+/* Posición Nivel 1: Cae hacia abajo */
+.dropdown > .submenu {
+    top: 100%;
+    left: 0;
+}
+
+/* Posición Nivel 2: Sale hacia la derecha */
+.has-submenu > .submenu-nivel2 {
+    top: 0;
+    left: 100%;
+}
+
+/* 4. LÓGICA DE DESPLIEGUE (La magia del hover) */
+/* Cuando pasas el mouse por el LI padre, muestra el UL hijo */
+.menu li:hover > .submenu,
+.menu li:hover > .submenu-nivel2 {
+    display: block;
+}
+
+/* Estilo para los enlaces dentro de los submenús */
+.submenu a, .submenu-nivel2 a {
+    background-color: #a01d9e;
+    font-size: 14px;
+    border-bottom: 1px solid #555; /* Separador*/
+}
 
 
 .container {
@@ -94,8 +136,8 @@
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.character img {
+ 
+.character img { 
     width: 100%;
     border-radius: 10px;
 }
@@ -105,38 +147,3 @@
     box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }
 
-
-/* 1. Escondemos el cuadrito del checkbox real */
-.menu-check {
-  display: none;
-}
-
-/* 2. Estilo para el label (lo que el usuario ve como botón) */
-.menu-label {
-  cursor: pointer;
-  color: #ad9638; /* Amarillo JoJo */
-  font-weight: bold;
-  display: inline-block;
-  padding: 10px;
-}
-
-/* 3. El submenú sigue oculto por defecto */
-.submenu {
-  display: none;
-  position: absolute;
-  background: #2c3e50;
-  list-style: none;
-  padding: 10px;
-  min-width: 200px;
-  z-index: 100;
-}
-
-/* 4. LA MAGIA: Cuando el checkbox esté marcado (+), muestra el submenú (~) */
-.menu-check:checked ~ .submenu {
-  display: block;
-}
-
-/* Opcional: Cambia el color de la flecha al estar abierto */
-.menu-check:checked ~ .menu-label {
-  color: #6d1a8f; /* Morado JoJo */
-}

@@ -9,25 +9,44 @@
 <body>
     <nav>
   <ul class="menu">
-    <!-- Menú de Servicios -->
+    <!-- Menú despegable -->
     <li class="dropdown">
-      <input type="checkbox" id="check-servicios" class="menu-check">
-      <label for="check-servicios" class="menu-label">Servicios ▼</label>
+      <input type="checkbox" id="check-conoce" class="menu-check">
+      <label for="check-servicios" class="menu-label">conoce ▼</label>
       
       <ul class="submenu">
-        <li><a href="#jojos">Personajes de JoJo's</a></li>
-      </ul>
-    </li>
+  <li>
+    <!-- menu conoce -->
+    <a href="#jojos">Personajes</a>
 
+    <!-- Submenú del submenú (Nivel 2) -->
+    <ul class="submenu-nivel2">
+      <li>
+        <a href="https://es.wikipedia.org/wiki/Dio_Brando" target="_blank">
+          Dio Brando (Wikipedia)
+        </a>
+        <li>
+        <a href="https://en-wikipedia-org.translate.goog/wiki/Jolyne_Cujoh?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc" target="_blank">
+          jolyne cujoh (wikipedia)</a>
+          <a href="https://en-wikipedia-org.translate.goog/wiki/Giorno_Giovanna?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc" target="_blank"> 
+            giorno giovanna (wikipedia)</a>
+        </li>
+      </li>
+       </ul>
+  </li>
+</ul>
     <!-- Menú de Contacto -->
     <li class="dropdown">
       <input type="checkbox" id="check-contacto" class="menu-check">
       <label for="check-contacto" class="menu-label">Contacto ▼</label>
-      
+      <!--submenu de contacto-->
       <ul class="submenu">
         <li><a href="#email">Email</a></li>
         <li><a href="#tel">Teléfono</a></li>
-      </ul>
+        <ul class="submenu-nivel2">
+            <li><a href="#tel">3022503091</a></li>
+            <li><a href="#email">hilayepes@gmail.com</a></li>
+        
     </li>
   </ul>
 </nav>
@@ -36,6 +55,7 @@
     <h1 class="title_c"> jojo's bizarre adventure</h1>
     <p>JoJo's Bizarre Adventure es una aclamada serie de manga y anime creada por Hirohiko Araki, iniciada en 1987. Narra la saga multigeneracional de la familia Joestar, cuyos miembros (abreviados como "JoJo") enfrentan fuerzas sobrenaturales. Es famosa por su estilo artístico estilizado, poses únicas, referencias musicales y la evolución de poderes (Hamon y Stands).</p>
     <main class="container">
+      <!--personajes jojo's-->
         <div class="character">
             <h2>jotaro Kujo</h2>
             <img src="jotaro-img.jpeg" height="350" width="350">
