@@ -1,0 +1,189 @@
+ body {
+    background-color: rgb(190, 197, 182);
+    background-image:url(fondo23.jpg);
+    background-size: cover;
+ }
+
+ body{
+    margin: 0;
+    font-style: arial,sans-serif;
+ }
+
+ 
+.menu, .menu ul, .menu li {
+    list-style: none !important; /* Quita los puntos/cuadritos de lista */
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* 2. MENÚ PRINCIPAL (Horizontal) */
+.menu {
+    background-color: #333;
+    display: flex; /* Alinea los items uno al lado del otro */
+    justify-content: center;/*sirve para centrar el menu*/
+}
+
+.menu li {
+    position: relative; /* Base para que los submenús se peguen aquí */
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+    border: none; /* Asegura que no haya bordes tipo "cuadrito" */
+    
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+
+.submenu, .submenu-nivel2 {
+    display: none; 
+    position: absolute;
+    background-color: #33af25;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+/* Posición Nivel 1: Cae hacia abajo */
+.dropdown > .submenu {
+    top: 100%;
+    left: 0;
+}
+
+/* Posición Nivel 2: Sale hacia la derecha */
+.has-submenu > .submenu-nivel2 {
+    top: 0;
+    left: 100%;
+}
+
+/* 4. LÓGICA DE DESPLIEGUE (La magia del hover) */
+/* Cuando pasas el mouse por el LI padre, muestra el UL hijo */
+.menu li:hover > .submenu,
+.menu li:hover > .submenu-nivel2 {
+    display: block;
+}
+
+/* Estilo para los enlaces dentro de los submenús */
+.submenu a, .submenu-nivel2 a {
+    background-color: #a01d9e;
+    font-size: 14px;
+    border-bottom: 1px solid #555; /* Separador*/
+}
+.menu-check {
+    display: none;
+}
+
+
+.container {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+}
+
+.character {
+    border-color: rgb(186, 182, 182);
+    box-shadow: 0 10px 25px;
+    position: relative;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #F9F9D7);
+    border-radius: 12px;
+
+    
+}
+
+.character h2 {
+    text-align: center;
+}
+
+.character img {
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.character p {
+    font-weight: 100;
+    text-align: center;
+}
+
+.title_c {
+    text-align: center ;
+
+}
+
+.boton {
+    display: block;
+  margin: 0 auto;   
+  text-align: center;
+  
+}
+
+.character {
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+ 
+.character img { 
+    width: 100%;
+    border-radius: 10px;
+}
+
+.character:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* CARRUSEL */
+.slider-box {
+  width: 90%;
+  max-width: 300px;
+  height: 100px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slider-box ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide 12s infinite;
+}
+
+.slider-box li {
+  list-style: none;
+  width: 100%;
+}
+
+.slider-box img {
+  width: 60%;
+  height: 80%;
+  object-fit: cover;
+}
+
+/* ANIMACIÓN */
+@keyframes slide {
+  0% { margin-left: 0%; }
+  25% { margin-left: -100%; }
+  50% { margin-left: -200%; }
+  75% { margin-left: -300%; }
+  100% { margin-left: 0%; }
+}
+
