@@ -1,48 +1,111 @@
+/* =========================
+   ESTILO GENERAL
+========================= */
+
 body {
-  font-family: Arial;
-  text-align: center;
+    font-family: Arial;
+    background-color: #b6adad;
+    background-image: url(naruto-fondo.avif);
+    color: white;
+    text-align: center;
 }
 
-.titulo {
-  margin: 20px;
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.contenedor {
+    display: flex;
+
+    /* DIRECCIÓN */
+    flex-direction: row; 
+
+    /* ESPACIADO */
+    justify-content: space-around;
+
+    /* ALINEACIÓN */
+    align-items: center;
+
+    /* PERMITIR SALTO */
+    flex-wrap: wrap;
+
+    align-content: center;
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+
+    border: 2px solid rgb(214, 153, 40);
+    padding: 20px;
 }
 
-.slider-box {
-  width: 1000px;
-  height: 500px;
-  margin: 50px auto;
-  overflow: hidden;
+/* =========================
+   TARJETAS
+========================= */
 
-  /* 👇 ESTO CREA EL CUADRO */
-  border: 4px solid rgb(245, 240, 240);
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  background: #000; /* opcional */
+.card {
+    background-color: #1a1a1a;
+    margin: 15px;
+    padding: 10px;
+    width: 580px;
+
+    /* tamaño base */
+    flex-basis: 480px;
+
+    border-radius: 40px;
 }
 
-.slider-box ul {
-  display: flex;
-  padding: 0;
-  width: 400%;
-  animation: slide 16s infinite ease-in-out;
+/* IMÁGENES */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-.slider-box li {
-  list-style: none;
-  width: 100%;
+/* ORDER (cambia posición) */
+.naruto {
+    order: 2;
 }
 
-.slider-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.sasuke {
+    order: 1;
 }
 
-/* Animación */
-@keyframes slide {
-  0% { margin-left: 0%; }
-  25% { margin-left: -100%; }
-  50% { margin-left: -200%; }
-  75% { margin-left: -300%; }
-  100% { margin-left: 0%; }
+/* FLEX GROW */
+.sakura {
+    flex-grow: 1;
+}
+
+/* FLEX SHRINK */
+.kakashi {
+    flex-shrink: 1;
+}
+
+/* ALIGN SELF (individual) */
+.sasuke {
+    align-self: flex-end;
+}
+
+/* =========================
+   SEGUNDO CONTENEDOR
+========================= */
+
+.direcciones {
+    display: flex;
+
+    /* prueba diferentes */
+    flex-direction: row-reverse;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid yellow;
+    margin-top: 30px;
+    height: 150px;
+}
+
+/* CAJAS */
+.box {
+    background-color: orange;
+    margin: 10px;
+    padding: 20px;
 }
